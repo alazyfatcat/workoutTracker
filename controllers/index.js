@@ -1,9 +1,6 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
-const multer = require('multer');
-
-
 
 const User = require('../models/user')
 /* GET home page. */
@@ -66,39 +63,5 @@ router.get('/github/callback', passport.authenticate('github', {
       res.redirect('/exercises')
 })
 
-//uploads the image
-const storage = multer.diskStorage({
-  destination: './public/uploads/',
-  filename: function(req, file, cb){
-    cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-  }
-});
-
-// Init Upload
-const upload = multer({
-  storage: storage,
-  limits: {
-      fileSize: 1000000
-  },
-  fileFilter: function(req, file, cb){
-      checkFileType(file, cb);
-  }
-}).single('myImage');
-
-//check file type
-function checkFileType(file, cb){
-  //allow ext
-  const filetypes = /jpeg|jpg|png|gif/;
-  //check ext
-  const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
-  //check mime types
-  const mimetype = filetypes.test(file.mimetype);
-
-  if (mimetype && extname ){
-      return cb(null, true);
-  }else{
-      cb('error: images only')
-  }
-}
 
 module.exports = router;
