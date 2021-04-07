@@ -1,0 +1,89 @@
+body {
+  font-family: "Poppins", sans-serif, "arial";
+  font-size:22px;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+nav{
+  text-transform: uppercase;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  overflow: hidden;
+  text-align: center;
+
+}
+nav ul{
+  text-align: right;
+  display: inline-block;
+}
+li {
+  display: inline-block;
+  text-align: center;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+
+.about, .contact, .projects{
+  min-height: 77vh; 
+}
+input{
+  width: 300px !important;
+  margin-left: 40px !important;
+}
+select {
+  display: inline !important; 
+  width: 300px !important;
+  margin-left: 40px !important;
+ }
+.login, .register{
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.register-h1, .login-h1{
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.row{
+  width: 100%;
+}
+.row p{
+  color: black;
+  font-size: 23px;
+}
+.alert{
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.edit select{
+  display: inline !important;
+}
+table{
+  width: 60% !important;
+}
+.edit, .index, .index-h1{
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+}
+.edit input, select{
+  margin-left: 10px;
+}

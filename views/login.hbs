@@ -1,0 +1,36 @@
+
+<div class="row">
+    <div class="col s4"></div>
+    <div class="col s4">
+        {{#if messages}}
+            <div class="alert red">
+               <p>Invalid Login</p> 
+            </div>
+        {{else}}
+            <div class="alert light-green accent-3">
+               <p>Please login with your account</p> 
+            </div>
+        {{/if}}
+    </div>
+    <div class="col s4"></div>
+</div>
+
+<h1 class="login-h1">Login</h1>
+<main class="login">
+    <form method="post">
+        <fieldset class="form-group">
+            <label for="username" class="col-2 control-label">Username: *</label>
+            <input name="username" id="username" required />
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="password" class="col-2 control-label">Password: *</label>
+            <input name="password" id="password" type="password" required />
+        </fieldset>
+        <fieldset class="form-group">
+            <button class="btn blue darken-1">Login</button> 
+            <a class="btn blue darken-1" href="/github">Login with GitHub</a>
+            <hr />
+            Need an account?  <a href="/register" title="Register">Register</a>
+        </fieldset>
+    </form>
+</main>

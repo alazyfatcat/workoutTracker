@@ -1,0 +1,44 @@
+<h1 class="index-h1">{{title}}</h1>
+{{#if user}}
+        <a class="index-h1" href="/exercises/add">Add a New Exercise</a>
+    {{/if}}
+<main class="index">
+    
+    <table class="highlight ">
+        <thead>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Length</th>
+            <th>Category</th>
+            {{#if user}}
+                <th>Actions</th>
+            {{/if}}
+            
+            {{#each exercises }}
+                <tr>
+                    <td>
+                        {{#if ../user}}
+                            <a href="/exercises/edit/{{this._id}}">
+                                {{this.name}}
+                            </a>
+                        {{else}}
+                            {{this.name}}
+                        {{/if}}
+        
+                    </td>
+                    <td>{{shortDate this.dueDate}}</td>
+                    <td>{{this.description}}</td>
+                    <td>{{this.length}}</td>
+                    <td>{{this.category}}</td>
+                    {{#if ../user}}
+                        <td>
+                            <a href="/exercises/delete/{{this._id}}" class="btn red darken-1" onclick="return deleteThis();">Delete</a>
+                        </td>
+                    {{/if}}
+                    
+                </tr>
+            {{/each}}
+        </thead>
+    </table>    
+</main>

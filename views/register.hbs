@@ -1,0 +1,25 @@
+<h1 class="register-h1">Register</h1>
+<main class="register">
+    <form method="post">
+        <fieldset class="form-group">
+            <label for="username" class="">Username: *</label>
+            <input name="username" id="username" required
+            placeholder="email@email.com" />
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="password" class="">Password: *</label>
+            <input name="password" id="password" type="password" required
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"  />
+        </fieldset>
+        <fieldset class="form-group">
+            <label for="confirm" class="">Confirm: *</label>
+            <input name="confirm" id="confirm" type="password" required 
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" />
+        </fieldset>
+        <fieldset class="form-group">
+            <button class="btn blue darken-1">Register</button>
+            <hr />
+                    Already have an account?  <a href="/login" title="Login">Login</a>
+        </fieldset>
+    </form>
+</main>

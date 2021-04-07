@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <!-- Yeti Bootstrap theme from https://bootswatch.com -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    <!-- custom js -->
+    <script type="text/javascript" src="/javascripts/scripts.js"></script>
+  </head>
+    <nav class="purple darken-2">
+      <a href="/">Workout Tracker</a>
+      <ul class="right hide-on-med-and-down">
+         
+        <li>
+            <a href="/exercises">Exercises</a>
+        </li>
+         <li >
+            <a href="/categories/add">Add Categories</a>
+        </li>
+      
+      
+        {{#if user}}
+        <li>
+          <a href="#">{{user.username}}</a>
+        </li>
+        <li>
+          <a href="/logout">Logout</a>
+        </li>
+        {{else }}
+        <li>
+            <a href="/register">Register</a>
+        </li>
+        <li >
+            <a href="/login">Login</a>
+        </li> 
+        {{/if}}
+        
+      </ul>
+    </nav>
+  <body>
+    {{{body}}} 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
+  </body>
+  
+</html>
